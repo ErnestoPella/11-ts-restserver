@@ -12,8 +12,10 @@ const Usuario = db.define('usuario',{
         type: DataTypes.STRING
     },
     rol:{
-        type: DataTypes.NUMBER
+        type: DataTypes.BOOLEAN
     },
+},{
+    timestamps:false
 });
 
 
