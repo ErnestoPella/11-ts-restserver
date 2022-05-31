@@ -19,6 +19,9 @@ const componente_1 = __importDefault(require("../routes/componente"));
 const traza_1 = __importDefault(require("../routes/traza"));
 const trazaPractica_1 = __importDefault(require("../routes/trazaPractica"));
 const trazaComponente_1 = __importDefault(require("../routes/trazaComponente"));
+const practicaBancoPiezometrico_1 = __importDefault(require("../routes/practicaBancoPiezometrico"));
+const practicaBancoBomba_1 = __importDefault(require("../routes/practicaBancoBomba"));
+const practicaCanal_1 = __importDefault(require("../routes/practicaCanal"));
 const cors_1 = __importDefault(require("cors"));
 const connection_1 = __importDefault(require("../db/connection"));
 class Server {
@@ -29,7 +32,10 @@ class Server {
             componentes: '/api/componentes',
             trazas: '/api/trazas',
             trazaPractica: '/api/trazaPractica',
-            trazaComponente: '/api/trazaComponente'
+            trazaComponente: '/api/trazaComponente',
+            practicaBancoPiezometrico: '/api/practicaBancoPiezometrico',
+            practicaBancoBomba: '/api/practicaBancoBomba',
+            pacticaCanal: '/api/practicaCanal'
         };
         this.app = (0, express_1.default)();
         this.port = process.env.PORT || '8000';
@@ -64,6 +70,9 @@ class Server {
         this.app.use(this.apiPaths.trazas, traza_1.default);
         this.app.use(this.apiPaths.trazaPractica, trazaPractica_1.default);
         this.app.use(this.apiPaths.trazaComponente, trazaComponente_1.default);
+        this.app.use(this.apiPaths.practicaBancoPiezometrico, practicaBancoPiezometrico_1.default);
+        this.app.use(this.apiPaths.practicaBancoBomba, practicaBancoBomba_1.default);
+        this.app.use(this.apiPaths.pacticaCanal, practicaCanal_1.default);
     }
     listen() {
         this.app.listen(this.port, () => {

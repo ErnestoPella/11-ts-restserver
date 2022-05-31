@@ -1,0 +1,1 @@
+{"version":3,"file":"practicaBancoPiezometrico.js","sourceRoot":"","sources":["../../models/practicaBancoPiezometrico.ts"],"names":[],"mappings":";;;;;AAAA,yCAAsC;AACtC,kEAAkC;AAElC,MAAM,yBAAyB,GAAG,oBAAE,CAAC,MAAM,CAAC,8BAA8B,EAAC;IACvE,MAAM,EAAC;QACH,IAAI,EAAE,qBAAS,CAAC,MAAM;QACtB,UAAU,EAAE,IAAI;KACnB;CACJ,EAAC;IACE,UAAU,EAAC,KAAK;CACnB,CAAC,CAAC;AAEH,kBAAe,yBAAyB,CAAC"}

@@ -1,0 +1,1 @@
+{"version":3,"file":"practicaBancoBomba.js","sourceRoot":"","sources":["../../models/practicaBancoBomba.ts"],"names":[],"mappings":";;;;;AAAA,yCAAsC;AACtC,kEAAkC;AAElC,MAAM,kBAAkB,GAAG,oBAAE,CAAC,MAAM,CAAC,sBAAsB,EAAC;IACxD,MAAM,EAAC;QACH,IAAI,EAAC,qBAAS,CAAC,MAAM;QACrB,UAAU,EAAC,IAAI;KAClB;CACJ,EAAC;IACE,UAAU,EAAE,KAAK;CACpB,CAAC,CAAC;AAEH,kBAAe,kBAAkB,CAAC"}

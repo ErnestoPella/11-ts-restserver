@@ -5,6 +5,9 @@ import componenteRoutes from '../routes/componente';
 import trazaRoutes from '../routes/traza';
 import trazaPracticaRouter from '../routes/trazaPractica';
 import trazaComponenteRouter from '../routes/trazaComponente';
+import practicaBancoPiezometricoRouter from '../routes/practicaBancoPiezometrico';
+import practicaBancoBombaRouter from '../routes/practicaBancoBomba';
+import practicaCanalRouter from '../routes/practicaCanal';
 import cors from 'cors';
 import db from '../db/connection';
 
@@ -18,7 +21,10 @@ class Server {
         componentes: '/api/componentes',
         trazas: '/api/trazas',
         trazaPractica: '/api/trazaPractica',
-        trazaComponente: '/api/trazaComponente'
+        trazaComponente: '/api/trazaComponente',
+        practicaBancoPiezometrico: '/api/practicaBancoPiezometrico',
+        practicaBancoBomba: '/api/practicaBancoBomba',
+        pacticaCanal: '/api/practicaCanal'
     }
     
     
@@ -62,6 +68,9 @@ class Server {
         this.app.use(this.apiPaths.trazas, trazaRoutes)
         this.app.use(this.apiPaths.trazaPractica,trazaPracticaRouter)
         this.app.use(this.apiPaths.trazaComponente, trazaComponenteRouter)
+        this.app.use(this.apiPaths.practicaBancoPiezometrico, practicaBancoPiezometricoRouter)
+        this.app.use(this.apiPaths.practicaBancoBomba, practicaBancoBombaRouter)
+        this.app.use(this.apiPaths.pacticaCanal, practicaCanalRouter)
     }
 
 
