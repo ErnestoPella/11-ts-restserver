@@ -72,7 +72,7 @@ export const putUsuario = async (req: Request,res: Response) =>{
         if(!usuario){
             return res.status(404).json({
                 msg: `No existe el usuario ${username}`
-            })
+            });
         }
         
         

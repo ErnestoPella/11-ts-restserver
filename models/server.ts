@@ -2,6 +2,9 @@ import express, {Application} from 'express';
 import userRoutes from '../routes/usuario';
 import practicaRoutes from '../routes/practica';
 import componenteRoutes from '../routes/componente';
+import trazaRoutes from '../routes/traza';
+import trazaPracticaRouter from '../routes/trazaPractica';
+import trazaComponenteRouter from '../routes/trazaComponente';
 import cors from 'cors';
 import db from '../db/connection';
 
@@ -12,7 +15,10 @@ class Server {
     private apiPaths = {
         usuarios: '/api/usuarios',
         practicas: '/api/practicas',
-        componentes: '/api/componentes'
+        componentes: '/api/componentes',
+        trazas: '/api/trazas',
+        trazaPractica: '/api/trazaPractica',
+        trazaComponente: '/api/trazaComponente'
     }
     
     
@@ -53,6 +59,9 @@ class Server {
         this.app.use(this.apiPaths.usuarios, userRoutes)
         this.app.use(this.apiPaths.practicas, practicaRoutes)
         this.app.use(this.apiPaths.componentes, componenteRoutes)
+        this.app.use(this.apiPaths.trazas, trazaRoutes)
+        this.app.use(this.apiPaths.trazaPractica,trazaPracticaRouter)
+        this.app.use(this.apiPaths.trazaComponente, trazaComponenteRouter)
     }
 
 

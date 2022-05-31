@@ -16,6 +16,9 @@ const express_1 = __importDefault(require("express"));
 const usuario_1 = __importDefault(require("../routes/usuario"));
 const practica_1 = __importDefault(require("../routes/practica"));
 const componente_1 = __importDefault(require("../routes/componente"));
+const traza_1 = __importDefault(require("../routes/traza"));
+const trazaPractica_1 = __importDefault(require("../routes/trazaPractica"));
+const trazaComponente_1 = __importDefault(require("../routes/trazaComponente"));
 const cors_1 = __importDefault(require("cors"));
 const connection_1 = __importDefault(require("../db/connection"));
 class Server {
@@ -23,7 +26,10 @@ class Server {
         this.apiPaths = {
             usuarios: '/api/usuarios',
             practicas: '/api/practicas',
-            componentes: '/api/componentes'
+            componentes: '/api/componentes',
+            trazas: '/api/trazas',
+            trazaPractica: '/api/trazaPractica',
+            trazaComponente: '/api/trazaComponente'
         };
         this.app = (0, express_1.default)();
         this.port = process.env.PORT || '8000';
@@ -55,6 +61,9 @@ class Server {
         this.app.use(this.apiPaths.usuarios, usuario_1.default);
         this.app.use(this.apiPaths.practicas, practica_1.default);
         this.app.use(this.apiPaths.componentes, componente_1.default);
+        this.app.use(this.apiPaths.trazas, traza_1.default);
+        this.app.use(this.apiPaths.trazaPractica, trazaPractica_1.default);
+        this.app.use(this.apiPaths.trazaComponente, trazaComponente_1.default);
     }
     listen() {
         this.app.listen(this.port, () => {
