@@ -8,6 +8,11 @@ import trazaComponenteRouter from '../routes/trazaComponente';
 import practicaBancoPiezometricoRouter from '../routes/practicaBancoPiezometrico';
 import practicaBancoBombaRouter from '../routes/practicaBancoBomba';
 import practicaCanalRouter from '../routes/practicaCanal';
+import componenteTuberiaRouter from '../routes/componenteTuberia';
+import componeteTanqueRouter from '../routes/componenteTanque';
+import componenteValvulaRouter from '../routes/componenteValvula';
+import componenteMiraRouter from '../routes/componenteMira';
+import ComponenteMedidorRevoluciones from '../routes/componenteMedidorRevoluciones';
 import cors from 'cors';
 import db from '../db/connection';
 
@@ -24,7 +29,12 @@ class Server {
         trazaComponente: '/api/trazaComponente',
         practicaBancoPiezometrico: '/api/practicaBancoPiezometrico',
         practicaBancoBomba: '/api/practicaBancoBomba',
-        pacticaCanal: '/api/practicaCanal'
+        pacticaCanal: '/api/practicaCanal',
+        componenteTuberia: '/api/componenteTuberia',
+        componenteTanque: '/api/componenteTanque',
+        componenteValvula: '/api/componenteValvula',
+        componenteMira: '/api/componenteMira',
+        componenteMedidorRevoluciones: '/api/componenteMedidorRevoluciones'
     }
     
     
@@ -71,6 +81,11 @@ class Server {
         this.app.use(this.apiPaths.practicaBancoPiezometrico, practicaBancoPiezometricoRouter)
         this.app.use(this.apiPaths.practicaBancoBomba, practicaBancoBombaRouter)
         this.app.use(this.apiPaths.pacticaCanal, practicaCanalRouter)
+        this.app.use(this.apiPaths.componenteTuberia, componenteTuberiaRouter)
+        this.app.use(this.apiPaths.componenteTanque, componeteTanqueRouter)
+        this.app.use(this.apiPaths.componenteValvula, componenteValvulaRouter)
+        this.app.use(this.apiPaths.componenteMira, componenteMiraRouter)
+        this.app.use(this.apiPaths.componenteMedidorRevoluciones,ComponenteMedidorRevoluciones)
     }
 
 

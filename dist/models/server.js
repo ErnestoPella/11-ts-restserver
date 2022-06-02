@@ -22,6 +22,11 @@ const trazaComponente_1 = __importDefault(require("../routes/trazaComponente"));
 const practicaBancoPiezometrico_1 = __importDefault(require("../routes/practicaBancoPiezometrico"));
 const practicaBancoBomba_1 = __importDefault(require("../routes/practicaBancoBomba"));
 const practicaCanal_1 = __importDefault(require("../routes/practicaCanal"));
+const componenteTuberia_1 = __importDefault(require("../routes/componenteTuberia"));
+const componenteTanque_1 = __importDefault(require("../routes/componenteTanque"));
+const componenteValvula_1 = __importDefault(require("../routes/componenteValvula"));
+const componenteMira_1 = __importDefault(require("../routes/componenteMira"));
+const componenteMedidorRevoluciones_1 = __importDefault(require("../routes/componenteMedidorRevoluciones"));
 const cors_1 = __importDefault(require("cors"));
 const connection_1 = __importDefault(require("../db/connection"));
 class Server {
@@ -35,7 +40,12 @@ class Server {
             trazaComponente: '/api/trazaComponente',
             practicaBancoPiezometrico: '/api/practicaBancoPiezometrico',
             practicaBancoBomba: '/api/practicaBancoBomba',
-            pacticaCanal: '/api/practicaCanal'
+            pacticaCanal: '/api/practicaCanal',
+            componenteTuberia: '/api/componenteTuberia',
+            componenteTanque: '/api/componenteTanque',
+            componenteValvula: '/api/componenteValvula',
+            componenteMira: '/api/componenteMira',
+            componenteMedidorRevoluciones: '/api/componenteMedidorRevoluciones'
         };
         this.app = (0, express_1.default)();
         this.port = process.env.PORT || '8000';
@@ -73,6 +83,11 @@ class Server {
         this.app.use(this.apiPaths.practicaBancoPiezometrico, practicaBancoPiezometrico_1.default);
         this.app.use(this.apiPaths.practicaBancoBomba, practicaBancoBomba_1.default);
         this.app.use(this.apiPaths.pacticaCanal, practicaCanal_1.default);
+        this.app.use(this.apiPaths.componenteTuberia, componenteTuberia_1.default);
+        this.app.use(this.apiPaths.componenteTanque, componenteTanque_1.default);
+        this.app.use(this.apiPaths.componenteValvula, componenteValvula_1.default);
+        this.app.use(this.apiPaths.componenteMira, componenteMira_1.default);
+        this.app.use(this.apiPaths.componenteMedidorRevoluciones, componenteMedidorRevoluciones_1.default);
     }
     listen() {
         this.app.listen(this.port, () => {
