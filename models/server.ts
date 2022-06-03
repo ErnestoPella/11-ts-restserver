@@ -12,7 +12,8 @@ import componenteTuberiaRouter from '../routes/componenteTuberia';
 import componeteTanqueRouter from '../routes/componenteTanque';
 import componenteValvulaRouter from '../routes/componenteValvula';
 import componenteMiraRouter from '../routes/componenteMira';
-import ComponenteMedidorRevoluciones from '../routes/componenteMedidorRevoluciones';
+import ComponenteMedidorRevolucionesRouter from '../routes/componenteMedidorRevoluciones';
+import ComponenteElevadorRouter from '../routes/componenteElevador';
 import cors from 'cors';
 import db from '../db/connection';
 
@@ -34,7 +35,8 @@ class Server {
         componenteTanque: '/api/componenteTanque',
         componenteValvula: '/api/componenteValvula',
         componenteMira: '/api/componenteMira',
-        componenteMedidorRevoluciones: '/api/componenteMedidorRevoluciones'
+        componenteMedidorRevoluciones: '/api/componenteMedidorRevoluciones',
+        componenteElevador: '/api/componenteElevador'
     }
     
     
@@ -85,7 +87,8 @@ class Server {
         this.app.use(this.apiPaths.componenteTanque, componeteTanqueRouter)
         this.app.use(this.apiPaths.componenteValvula, componenteValvulaRouter)
         this.app.use(this.apiPaths.componenteMira, componenteMiraRouter)
-        this.app.use(this.apiPaths.componenteMedidorRevoluciones,ComponenteMedidorRevoluciones)
+        this.app.use(this.apiPaths.componenteMedidorRevoluciones,ComponenteMedidorRevolucionesRouter)
+        this.app.use(this.apiPaths.componenteElevador, ComponenteElevadorRouter)
     }
 
 

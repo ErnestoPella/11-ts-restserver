@@ -27,6 +27,7 @@ const componenteTanque_1 = __importDefault(require("../routes/componenteTanque")
 const componenteValvula_1 = __importDefault(require("../routes/componenteValvula"));
 const componenteMira_1 = __importDefault(require("../routes/componenteMira"));
 const componenteMedidorRevoluciones_1 = __importDefault(require("../routes/componenteMedidorRevoluciones"));
+const componenteElevador_1 = __importDefault(require("../routes/componenteElevador"));
 const cors_1 = __importDefault(require("cors"));
 const connection_1 = __importDefault(require("../db/connection"));
 class Server {
@@ -45,7 +46,8 @@ class Server {
             componenteTanque: '/api/componenteTanque',
             componenteValvula: '/api/componenteValvula',
             componenteMira: '/api/componenteMira',
-            componenteMedidorRevoluciones: '/api/componenteMedidorRevoluciones'
+            componenteMedidorRevoluciones: '/api/componenteMedidorRevoluciones',
+            componenteElevador: '/api/componenteElevador'
         };
         this.app = (0, express_1.default)();
         this.port = process.env.PORT || '8000';
@@ -88,6 +90,7 @@ class Server {
         this.app.use(this.apiPaths.componenteValvula, componenteValvula_1.default);
         this.app.use(this.apiPaths.componenteMira, componenteMira_1.default);
         this.app.use(this.apiPaths.componenteMedidorRevoluciones, componenteMedidorRevoluciones_1.default);
+        this.app.use(this.apiPaths.componenteElevador, componenteElevador_1.default);
     }
     listen() {
         this.app.listen(this.port, () => {
