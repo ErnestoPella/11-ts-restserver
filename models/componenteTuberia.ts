@@ -2,7 +2,7 @@ import { DataTypes } from 'sequelize';
 import db from '../db/connection';
 
 const ComponenteTuberia =db.define('tuberias',{
-    id:{
+    id_componente:{
         type: DataTypes.INTEGER,
         primaryKey: true
     },
@@ -17,10 +17,7 @@ const ComponenteTuberia =db.define('tuberias',{
     },
     vejez:{
         type: DataTypes.INTEGER
-    },
-    nombre_practica:{
-        type: DataTypes.STRING
-    } 
+    }
 },{
     timestamps: false
 });

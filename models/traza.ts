@@ -10,13 +10,13 @@ const Traza = db.define('trazas',{
         allowNull:true,
         defaultValue: DataTypes.NOW,
     },
-    id_usuario:{
-        type: DataTypes.STRING
-    },
     hora:{
         type: DataTypes.TIME,
         allowNull:true,
         defaultValue: DataTypes.NOW
+    },
+    username:{
+        type: DataTypes.STRING
     }
 },{
     timestamps:false

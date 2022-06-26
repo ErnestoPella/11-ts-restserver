@@ -28,6 +28,8 @@ const componenteValvula_1 = __importDefault(require("../routes/componenteValvula
 const componenteMira_1 = __importDefault(require("../routes/componenteMira"));
 const componenteMedidorRevoluciones_1 = __importDefault(require("../routes/componenteMedidorRevoluciones"));
 const componenteElevador_1 = __importDefault(require("../routes/componenteElevador"));
+const rol_1 = __importDefault(require("../routes/rol"));
+const usuarioRol_1 = __importDefault(require("../routes/usuarioRol"));
 const cors_1 = __importDefault(require("cors"));
 const connection_1 = __importDefault(require("../db/connection"));
 class Server {
@@ -47,7 +49,9 @@ class Server {
             componenteValvula: '/api/componenteValvula',
             componenteMira: '/api/componenteMira',
             componenteMedidorRevoluciones: '/api/componenteMedidorRevoluciones',
-            componenteElevador: '/api/componenteElevador'
+            componenteElevador: '/api/componenteElevador',
+            rol: '/api/rol',
+            usuarioRol: '/api/usuarioRol'
         };
         this.app = (0, express_1.default)();
         this.port = process.env.PORT || '8000';
@@ -91,6 +95,8 @@ class Server {
         this.app.use(this.apiPaths.componenteMira, componenteMira_1.default);
         this.app.use(this.apiPaths.componenteMedidorRevoluciones, componenteMedidorRevoluciones_1.default);
         this.app.use(this.apiPaths.componenteElevador, componenteElevador_1.default);
+        this.app.use(this.apiPaths.rol, rol_1.default);
+        this.app.use(this.apiPaths.usuarioRol, usuarioRol_1.default);
     }
     listen() {
         this.app.listen(this.port, () => {

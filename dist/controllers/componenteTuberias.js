@@ -24,7 +24,7 @@ const getComponenteTuberia = (req, res) => __awaiter(void 0, void 0, void 0, fun
     try {
         const componenteTuberia = yield componenteTuberia_1.default.findOne({
             where: {
-                id: id
+                id_componente: id
             }
         });
         res.json(componenteTuberia);
@@ -41,12 +41,12 @@ const postComponenteTuberia = (req, res) => __awaiter(void 0, void 0, void 0, fu
     try {
         const existeComponenteTuberia = yield componenteTuberia_1.default.findOne({
             where: {
-                id: body.id
+                id_componente: body.id_componente
             }
         });
         if (existeComponenteTuberia) {
             return res.status(400).json({
-                msg: `Ya existe una tuberia con el id ${body.id}`
+                msg: `Ya existe una tuberia con el id ${body.id_componente}`
             });
         }
         const componenteTuberia = new componenteTuberia_1.default(body);
@@ -68,7 +68,7 @@ const putComponenteTuberia = (req, res) => __awaiter(void 0, void 0, void 0, fun
     try {
         const componenteTuberia = yield componenteTuberia_1.default.findOne({
             where: {
-                id: id
+                id_componente: id
             }
         });
         if (!componenteTuberia) {
@@ -92,7 +92,7 @@ const deleteComponenteTuberia = (req, res) => __awaiter(void 0, void 0, void 0, 
     const { id } = req.params;
     const componenteTuberia = yield componenteTuberia_1.default.findOne({
         where: {
-            id: id
+            id_componente: id
         }
     });
     if (!componenteTuberia) {

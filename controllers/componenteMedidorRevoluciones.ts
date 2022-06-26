@@ -16,7 +16,7 @@ export const getComponenteMedidorRevoluciones = async (req:Request,res:Response)
     try {
         const componenteMedidorRevoluciones = await ComponenteMedidorRevoluciones.findOne({
             where:{
-                id:id
+                id_componente:id
             }
         });
         res.json(componenteMedidorRevoluciones);
@@ -34,7 +34,7 @@ export const postComponenteMedidorRevoluciones = async (req:Request, res:Respons
     try {
         const existeMedidor = await ComponenteMedidorRevoluciones.findOne({
             where:{
-                id:body.id
+                id_componente:body.id_componente
             }
         });
         if(existeMedidor){
@@ -62,7 +62,7 @@ export const putComponenteMedidorRevoluciones = async (req:Request,res:Response)
     try {
         const componenteMedidorRevoluciones = await ComponenteMedidorRevoluciones.findOne({
             where:{
-                id:id
+                id_componente:id
             }
         });
         if(!componenteMedidorRevoluciones){
@@ -89,7 +89,7 @@ export const deleteComponenteMedidorRevoluciones = async (req:Request, res:Respo
 
     const componenteMedidorRevoluciones = await ComponenteMedidorRevoluciones.findOne({
         where:{
-            id:id
+            id_componente:id
         }
     });
     if(!componenteMedidorRevoluciones){

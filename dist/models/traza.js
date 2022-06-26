@@ -14,13 +14,13 @@ const Traza = connection_1.default.define('trazas', {
         allowNull: true,
         defaultValue: sequelize_1.DataTypes.NOW,
     },
-    id_usuario: {
-        type: sequelize_1.DataTypes.STRING
-    },
     hora: {
         type: sequelize_1.DataTypes.TIME,
         allowNull: true,
         defaultValue: sequelize_1.DataTypes.NOW
+    },
+    username: {
+        type: sequelize_1.DataTypes.STRING
     }
 }, {
     timestamps: false

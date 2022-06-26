@@ -13,7 +13,11 @@ export const getPracticaCanal = async (req:Request, res:Response) => {
     const { nombre } = req.params;
 
     try {
-        const practicaCanal = await PracticaCanal.findByPk( nombre );
+        const practicaCanal = await PracticaCanal.findOne({
+            where:{
+                nombre: nombre
+            }
+        });
         res.json(practicaCanal);    
     } catch (error) {
         res.status(404).json({

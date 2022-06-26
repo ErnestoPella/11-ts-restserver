@@ -2,7 +2,7 @@ import { DataTypes } from 'sequelize';
 import db from '../db/connection';
 
 const ComponenteValvula = db.define('valvula',{
-    id:{
+    id_componente:{
         type: DataTypes.INTEGER,
         primaryKey: true
     },
@@ -11,9 +11,6 @@ const ComponenteValvula = db.define('valvula',{
     },
     cant_aperturas:{
         type: DataTypes.INTEGER
-    },
-    nombre_practica:{
-        type: DataTypes.STRING
     }
 },{
     timestamps: false

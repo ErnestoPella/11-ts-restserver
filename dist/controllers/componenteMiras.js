@@ -24,7 +24,7 @@ const getComponenteMira = (req, res) => __awaiter(void 0, void 0, void 0, functi
     try {
         const componenteMira = yield componenteMira_1.default.findOne({
             where: {
-                id: id
+                id_componente: id
             }
         });
         res.json(componenteMira);
@@ -41,12 +41,12 @@ const postComponenteMira = (req, res) => __awaiter(void 0, void 0, void 0, funct
     try {
         const existeMira = yield componenteMira_1.default.findOne({
             where: {
-                id: body.id
+                id_componente: body.id_componente
             }
         });
         if (existeMira) {
             return res.status(400).json({
-                msg: `Ya existe una mira con el id ${body.id}`
+                msg: `Ya existe una mira con el id ${body.id_componente}`
             });
         }
         const componenteMira = new componenteMira_1.default(body);
@@ -68,7 +68,7 @@ const putComponenteMira = (req, res) => __awaiter(void 0, void 0, void 0, functi
     try {
         const componenteMira = yield componenteMira_1.default.findOne({
             where: {
-                id: id
+                id_componente: id
             }
         });
         if (!componenteMira) {
@@ -92,7 +92,7 @@ const deleteComponenteMira = (req, res) => __awaiter(void 0, void 0, void 0, fun
     const { id } = req.params;
     const componenteMira = yield componenteMira_1.default.findOne({
         where: {
-            id: id
+            id_componente: id
         }
     });
     if (!componenteMira) {

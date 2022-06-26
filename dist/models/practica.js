@@ -8,7 +8,6 @@ const connection_1 = __importDefault(require("../db/connection"));
 const Practica = connection_1.default.define('practica', {
     nombre: {
         type: sequelize_1.DataTypes.STRING,
-        primaryKey: true
     },
     descripcion: {
         type: sequelize_1.DataTypes.STRING

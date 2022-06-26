@@ -14,7 +14,7 @@ export const getComponenteElevador = async(req:Request,res:Response) => {
     try {
         const componentes = await ComponenteElevador.findOne({
             where:{
-                id:id
+                id_componente:id
             }
         })
 
@@ -33,7 +33,7 @@ export const postComponenteElevador = async(req:Request,res:Response) => {
     try {
         const existeElevador = await ComponenteElevador.findOne({
             where:{
-                id: body.id
+                id_componente: body.id_componente
             }
         });
         if(existeElevador){
@@ -63,7 +63,7 @@ export const putComponenteElevador = async(req:Request,res:Response) => {
     try {
         const componenteElevador = await ComponenteElevador.findOne({
             where:{
-                id:id
+                id_componente:id
             }
         });
         if(!componenteElevador){
@@ -92,7 +92,7 @@ export const deleteComponenteElevador = async(req:Request,res:Response) => {
     const {id} = req.params;
     const componenteElevador = await ComponenteElevador.findOne({
         where:{
-            id:id
+            id_componente:id
         }
     });
     if(!componenteElevador){

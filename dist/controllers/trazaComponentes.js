@@ -24,7 +24,7 @@ const getTrazaComponente = (req, res) => __awaiter(void 0, void 0, void 0, funct
     try {
         const trazaComponente = yield trazaComponente_1.default.findOne({
             where: {
-                id: id
+                id_traza: id
             }
         });
         res.json(trazaComponente);
@@ -41,12 +41,12 @@ const postTrazaComponente = (req, res) => __awaiter(void 0, void 0, void 0, func
     try {
         const existetrazaComponente = yield trazaComponente_1.default.findOne({
             where: {
-                id: body.id
+                id_traza: body.id_traza
             }
         });
         if (existetrazaComponente) {
             return res.status(400).json({
-                msg: `Ya existe una traza con el id ${body.id}`
+                msg: `Ya existe una traza con el id ${body.id_traza}`
             });
         }
         const trazaComponente = new trazaComponente_1.default(body);
@@ -66,7 +66,7 @@ const putTrzaComponente = (req, res) => __awaiter(void 0, void 0, void 0, functi
     try {
         const trazaComponente = yield trazaComponente_1.default.findOne({
             where: {
-                id: id
+                id_traza: id
             }
         });
         if (!trazaComponente) {
@@ -88,7 +88,7 @@ const deleteTrazaComponente = (req, res) => __awaiter(void 0, void 0, void 0, fu
     const { id } = req.params;
     const trazaComponente = yield trazaComponente_1.default.findOne({
         where: {
-            id: id
+            id_traza: id
         }
     });
     if (!trazaComponente) {

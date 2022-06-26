@@ -3,25 +3,23 @@ import db from '../db/connection';
 
 
 const ComponenteTanque = db.define('tanques',{
-    id:{
+    id_componente:{
         type: DataTypes.INTEGER,
         primaryKey: true
     },
     altura:{
         type: DataTypes.FLOAT
     },
-    escala:{
+    color:{
         type: DataTypes.STRING
+    },
+    escala:{
+        type: DataTypes.FLOAT
     },
     diametro:{
         type: DataTypes.FLOAT
-    },
-    nombre_practica:{
-        type: DataTypes.STRING
-    },
-    color:{
-        type: DataTypes.STRING
     }
+    
 },{
     timestamps: false
 });

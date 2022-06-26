@@ -6,11 +6,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const sequelize_1 = require("sequelize");
 const connection_1 = __importDefault(require("../db/connection"));
 const TrazaPractica = connection_1.default.define('traza_practica', {
-    id: {
+    id_traza: {
         type: sequelize_1.DataTypes.INTEGER,
         primaryKey: true
     },
-    nombre: {
+    id_practica: {
+        type: sequelize_1.DataTypes.INTEGER
+    },
+    username: {
         type: sequelize_1.DataTypes.STRING
     }
 }, {

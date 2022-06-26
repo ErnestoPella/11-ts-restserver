@@ -15,7 +15,7 @@ export const getTrazaComponente = async (req:Request,res:Response) => {
     try {
         const trazaComponente = await TrazaComponente.findOne({
             where:{
-                id: id
+                id_traza: id
             }
         });
         res.json(trazaComponente);    
@@ -34,12 +34,12 @@ export const postTrazaComponente = async (req:Request,res:Response) => {
     try {
         const existetrazaComponente = await TrazaComponente.findOne({
             where:{
-                id: body.id
+                id_traza: body.id_traza
             }
         });
         if(existetrazaComponente){
             return res.status(400).json({
-                msg: `Ya existe una traza con el id ${body.id}`
+                msg: `Ya existe una traza con el id ${body.id_traza}`
             });
         }
         
@@ -64,7 +64,7 @@ export const putTrzaComponente = async (req: Request, res: Response) => {
     try {
         const trazaComponente = await TrazaComponente.findOne({
             where:{
-                id: id
+                id_traza: id
             }
         });
         if(!trazaComponente){
@@ -90,7 +90,7 @@ export const deleteTrazaComponente = async (req:Request,res:Response) => {
     
     const trazaComponente = await TrazaComponente.findOne({
         where:{
-            id: id
+            id_traza: id
         }
     });
     if(!trazaComponente){

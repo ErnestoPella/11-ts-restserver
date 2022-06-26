@@ -4,7 +4,6 @@ import db from '../db/connection';
 const Practica = db.define('practica',{
     nombre:{
         type:DataTypes.STRING,
-        primaryKey:true
     },
     descripcion:{
         type: DataTypes.STRING

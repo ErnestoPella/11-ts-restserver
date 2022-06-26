@@ -1,5 +1,6 @@
 import {Request, Response} from 'express';
 import Usuario from '../models/usuario';
+import * as CryptoJS from 'crypto-js';
 
 export const getUsuarios = async (req: Request,res: Response) =>{
 

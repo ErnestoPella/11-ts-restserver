@@ -14,6 +14,8 @@ import componenteValvulaRouter from '../routes/componenteValvula';
 import componenteMiraRouter from '../routes/componenteMira';
 import ComponenteMedidorRevolucionesRouter from '../routes/componenteMedidorRevoluciones';
 import ComponenteElevadorRouter from '../routes/componenteElevador';
+import rolRouter from '../routes/rol';
+import usuarioRol from '../routes/usuarioRol';
 import cors from 'cors';
 import db from '../db/connection';
 
@@ -36,7 +38,9 @@ class Server {
         componenteValvula: '/api/componenteValvula',
         componenteMira: '/api/componenteMira',
         componenteMedidorRevoluciones: '/api/componenteMedidorRevoluciones',
-        componenteElevador: '/api/componenteElevador'
+        componenteElevador: '/api/componenteElevador',
+        rol:'/api/rol',
+        usuarioRol:'/api/usuarioRol'
     }
     
     
@@ -89,6 +93,8 @@ class Server {
         this.app.use(this.apiPaths.componenteMira, componenteMiraRouter)
         this.app.use(this.apiPaths.componenteMedidorRevoluciones,ComponenteMedidorRevolucionesRouter)
         this.app.use(this.apiPaths.componenteElevador, ComponenteElevadorRouter)
+        this.app.use(this.apiPaths.rol, rolRouter)
+        this.app.use(this.apiPaths.usuarioRol,usuarioRol)
     }
 
 

@@ -24,7 +24,7 @@ const getComponenteValvula = (req, res) => __awaiter(void 0, void 0, void 0, fun
     try {
         const componenteValvula = yield componenteValvula_1.default.findOne({
             where: {
-                id: id
+                id_componente: id
             }
         });
         res.json(componenteValvula);
@@ -41,12 +41,12 @@ const postComponenteValvula = (req, res) => __awaiter(void 0, void 0, void 0, fu
     try {
         const existeValvula = yield componenteValvula_1.default.findOne({
             where: {
-                id: body.id
+                id_componente: body.id_componente
             }
         });
         if (existeValvula) {
             return res.status(400).json({
-                msg: `Ya existe una valvula con el id ${body.id}`
+                msg: `Ya existe una valvula con el id ${body.id_componente}`
             });
         }
         const componenteValvula = new componenteValvula_1.default(body);
@@ -68,7 +68,7 @@ const putComponenteValvula = (req, res) => __awaiter(void 0, void 0, void 0, fun
     try {
         const componenteValvula = yield componenteValvula_1.default.findOne({
             where: {
-                id: id
+                id_componente: id
             }
         });
         if (!componenteValvula) {
@@ -92,7 +92,7 @@ const deleteComponenteValvula = (req, res) => __awaiter(void 0, void 0, void 0, 
     const { id } = req.params;
     const componenteValvula = yield componenteValvula_1.default.findOne({
         where: {
-            id: id
+            id_componente: id
         }
     });
     if (!componenteValvula) {

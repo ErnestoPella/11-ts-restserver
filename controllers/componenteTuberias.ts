@@ -16,7 +16,7 @@ export const getComponenteTuberia = async (req:Request,res:Response) => {
     try {
         const componenteTuberia = await ComponenteTuberia.findOne({
             where:{
-                id: id
+                id_componente: id
             }
         });
         res.json(componenteTuberia);
@@ -35,13 +35,13 @@ export const postComponenteTuberia = async (req:Request, res:Response) => {
     try {
         const existeComponenteTuberia = await ComponenteTuberia.findOne({
             where:{
-                id: body.id
+                id_componente: body.id_componente
             }
         });
         
         if(existeComponenteTuberia){
             return res.status(400).json({
-                msg: `Ya existe una tuberia con el id ${body.id}`
+                msg: `Ya existe una tuberia con el id ${body.id_componente}`
             });
         }
         
@@ -65,7 +65,7 @@ export const putComponenteTuberia = async (req:Request,res:Response) => {
     try {
         const componenteTuberia = await ComponenteTuberia.findOne({
             where:{
-                id:id
+                id_componente:id
             }
         });
         if(!componenteTuberia){
@@ -93,7 +93,7 @@ export const deleteComponenteTuberia = async (req: Request, res:Response) => {
 
     const componenteTuberia = await ComponenteTuberia.findOne({
         where:{
-            id:id
+            id_componente:id
         }
     });
     if(!componenteTuberia){

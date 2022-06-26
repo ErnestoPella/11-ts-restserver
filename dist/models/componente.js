@@ -9,9 +9,6 @@ const Componente = connection_1.default.define('componente', {
     nombre: {
         type: sequelize_1.DataTypes.STRING
     },
-    nombre_practica: {
-        type: sequelize_1.DataTypes.STRING
-    },
 }, {
     timestamps: false
 });

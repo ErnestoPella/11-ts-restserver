@@ -22,7 +22,11 @@ exports.getPracticasCanal = getPracticasCanal;
 const getPracticaCanal = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { nombre } = req.params;
     try {
-        const practicaCanal = yield practicaCanal_1.default.findByPk(nombre);
+        const practicaCanal = yield practicaCanal_1.default.findOne({
+            where: {
+                nombre: nombre
+            }
+        });
         res.json(practicaCanal);
     }
     catch (error) {

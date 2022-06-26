@@ -15,7 +15,7 @@ export const getTrazaPractica = async (req:Request,res:Response) => {
     try {
         const trazaPractica = await TrazaPractica.findOne({
             where:{
-                id: id
+                id_traza: id
             }
         });
         res.json(trazaPractica);    
@@ -34,13 +34,13 @@ export const postTrazaPractica = async (req:Request,res:Response) => {
     try {
         const existetrazaPractica = await TrazaPractica.findOne({
             where:{
-                id: body.id
+                id_traza: body.id_traza
             }
         });
 
         if (existetrazaPractica) {
             return res.status(400).json({
-                msg: `Ya existe una traza con el id ${body.id}`
+                msg: `Ya existe una traza con el id ${body.id_traza}`
             });
         } 
         const trazaPractica = new TrazaPractica(body);
@@ -61,7 +61,7 @@ export const putTrazaPractica = async (req:Request,res:Response) => {
     try {
         const trazaPractica =  await TrazaPractica.findOne({
             where: {
-                id: id
+                id_traza: id
             }
         });
 
@@ -86,7 +86,7 @@ export const deleteTrazaPractica = async (req:Request,res:Response) => {
    
     const trazaPractica =  await TrazaPractica.findOne({
         where:{
-            id: id
+            id_traza: id
         }
     });
 

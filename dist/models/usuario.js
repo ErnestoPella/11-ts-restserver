@@ -7,17 +7,15 @@ const sequelize_1 = require("sequelize");
 const connection_1 = __importDefault(require("../db/connection"));
 const Usuario = connection_1.default.define('usuario', {
     username: {
-        type: sequelize_1.DataTypes.STRING
+        type: sequelize_1.DataTypes.STRING,
+        primaryKey: true
     },
     password: {
         type: sequelize_1.DataTypes.STRING
     },
     nombre: {
         type: sequelize_1.DataTypes.STRING
-    },
-    rol: {
-        type: sequelize_1.DataTypes.BOOLEAN
-    },
+    }
 }, {
     timestamps: false
 });

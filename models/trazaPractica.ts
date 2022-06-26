@@ -2,11 +2,14 @@ import {DataTypes} from 'sequelize';
 import db from '../db/connection';
 
 const TrazaPractica = db.define('traza_practica',{
-    id:{
+    id_traza:{
         type: DataTypes.INTEGER,
         primaryKey:true
     },
-    nombre:{
+    id_practica:{
+        type: DataTypes.INTEGER
+    },
+    username:{
         type: DataTypes.STRING
     }
 },{

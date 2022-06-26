@@ -24,7 +24,7 @@ const getTrazaPractica = (req, res) => __awaiter(void 0, void 0, void 0, functio
     try {
         const trazaPractica = yield trazaPractica_1.default.findOne({
             where: {
-                id: id
+                id_traza: id
             }
         });
         res.json(trazaPractica);
@@ -41,12 +41,12 @@ const postTrazaPractica = (req, res) => __awaiter(void 0, void 0, void 0, functi
     try {
         const existetrazaPractica = yield trazaPractica_1.default.findOne({
             where: {
-                id: body.id
+                id_traza: body.id_traza
             }
         });
         if (existetrazaPractica) {
             return res.status(400).json({
-                msg: `Ya existe una traza con el id ${body.id}`
+                msg: `Ya existe una traza con el id ${body.id_traza}`
             });
         }
         const trazaPractica = new trazaPractica_1.default(body);
@@ -66,7 +66,7 @@ const putTrazaPractica = (req, res) => __awaiter(void 0, void 0, void 0, functio
     try {
         const trazaPractica = yield trazaPractica_1.default.findOne({
             where: {
-                id: id
+                id_traza: id
             }
         });
         if (!trazaPractica) {
@@ -88,7 +88,7 @@ const deleteTrazaPractica = (req, res) => __awaiter(void 0, void 0, void 0, func
     const { id } = req.params;
     const trazaPractica = yield trazaPractica_1.default.findOne({
         where: {
-            id: id
+            id_traza: id
         }
     });
     if (!trazaPractica) {

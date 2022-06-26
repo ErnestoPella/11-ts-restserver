@@ -2,7 +2,7 @@ import { Sequelize } from 'sequelize';
 
 
 
-const db = new Sequelize('practicaBD','postgres','Pell@.2000',{
+const db = new Sequelize('practicadb','postgres','Pell@.2000',{
     host: 'localhost',
     dialect: 'postgres',
     port: 5433,

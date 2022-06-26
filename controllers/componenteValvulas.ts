@@ -15,7 +15,7 @@ export const getComponenteValvula = async (req:Request, res:Response) => {
     try {
         const componenteValvula = await ComponenteValvula.findOne({
             where:{
-                id:id
+                id_componente:id
             }
         });
         res.json(componenteValvula);
@@ -33,12 +33,12 @@ export const postComponenteValvula = async (req:Request, res:Response) => {
     try {
         const existeValvula = await ComponenteValvula.findOne({
             where:{
-                id: body.id
+                id_componente: body.id_componente
             }
         });
         if(existeValvula){
             return res.status(400).json({
-                msg: `Ya existe una valvula con el id ${body.id}`
+                msg: `Ya existe una valvula con el id ${body.id_componente}`
             });
         }
         const componenteValvula = new ComponenteValvula(body);
@@ -61,7 +61,7 @@ export const putComponenteValvula = async (req:Request, res: Response) => {
     try {
         const componenteValvula = await ComponenteValvula.findOne({
             where:{
-                id:id
+                id_componente:id
             }
         });
         if(!componenteValvula){
@@ -86,7 +86,7 @@ export const deleteComponenteValvula = async (req:Request,res:Response) => {
 
     const componenteValvula = await ComponenteValvula.findOne({
         where:{
-            id:id
+            id_componente:id
         }
     });
     if(!componenteValvula){

@@ -24,7 +24,7 @@ const getComponenteElevador = (req, res) => __awaiter(void 0, void 0, void 0, fu
     try {
         const componentes = yield componenteElevador_1.default.findOne({
             where: {
-                id: id
+                id_componente: id
             }
         });
         res.json(componentes);
@@ -41,7 +41,7 @@ const postComponenteElevador = (req, res) => __awaiter(void 0, void 0, void 0, f
     try {
         const existeElevador = yield componenteElevador_1.default.findOne({
             where: {
-                id: body.id
+                id_componente: body.id_componente
             }
         });
         if (existeElevador) {
@@ -68,7 +68,7 @@ const putComponenteElevador = (req, res) => __awaiter(void 0, void 0, void 0, fu
     try {
         const componenteElevador = yield componenteElevador_1.default.findOne({
             where: {
-                id: id
+                id_componente: id
             }
         });
         if (!componenteElevador) {
@@ -94,7 +94,7 @@ const deleteComponenteElevador = (req, res) => __awaiter(void 0, void 0, void 0,
     const { id } = req.params;
     const componenteElevador = yield componenteElevador_1.default.findOne({
         where: {
-            id: id
+            id_componente: id
         }
     });
     if (!componenteElevador) {

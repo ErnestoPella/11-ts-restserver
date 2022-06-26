@@ -17,7 +17,7 @@ export const getComponenteTanque = async (req: Request, res: Response) => {
     try {
         const componenteTanque = await ComponenteTanque.findOne({
             where:{
-                id: id
+                id_componente: id
             }
         });
         res.json(componenteTanque);
@@ -36,13 +36,13 @@ export const postComponenteTanque = async (req:Request, res: Response) => {
     try {
         const existeTanque = await ComponenteTanque.findOne({
             where:{
-                id: body.id
+                id_componente: body.id_componente
             }
         });
 
         if(existeTanque){
             return res.status(400).json({
-                msg: `Ya existe un tanque con el id ${body.id}`
+                msg: `Ya existe un tanque con el id ${body.id_componente}`
             });
         }
         const componenteTanque = new ComponenteTanque(body);
@@ -66,7 +66,7 @@ export const putComponenteTanque = async (req:Request,res:Response) => {
     try {
         const componenteTanque = await ComponenteTanque.findOne({
             where:{
-                id:id
+                id_componente:id
             }
         });
         if(!componenteTanque){
@@ -92,7 +92,7 @@ export const deleteComponenteTaque = async (req:Request, res:Response) => {
 
     const componenteTanque = await ComponenteTanque.findOne({
         where:{
-            id:id
+            id_componente:id
         }
     });
     if(!componenteTanque){

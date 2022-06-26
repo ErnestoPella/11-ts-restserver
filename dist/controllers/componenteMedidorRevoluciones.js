@@ -24,7 +24,7 @@ const getComponenteMedidorRevoluciones = (req, res) => __awaiter(void 0, void 0,
     try {
         const componenteMedidorRevoluciones = yield componenteMedidorRevolucion_1.default.findOne({
             where: {
-                id: id
+                id_componente: id
             }
         });
         res.json(componenteMedidorRevoluciones);
@@ -41,7 +41,7 @@ const postComponenteMedidorRevoluciones = (req, res) => __awaiter(void 0, void 0
     try {
         const existeMedidor = yield componenteMedidorRevolucion_1.default.findOne({
             where: {
-                id: body.id
+                id_componente: body.id_componente
             }
         });
         if (existeMedidor) {
@@ -68,7 +68,7 @@ const putComponenteMedidorRevoluciones = (req, res) => __awaiter(void 0, void 0,
     try {
         const componenteMedidorRevoluciones = yield componenteMedidorRevolucion_1.default.findOne({
             where: {
-                id: id
+                id_componente: id
             }
         });
         if (!componenteMedidorRevoluciones) {
@@ -92,7 +92,7 @@ const deleteComponenteMedidorRevoluciones = (req, res) => __awaiter(void 0, void
     const { id } = req.params;
     const componenteMedidorRevoluciones = yield componenteMedidorRevolucion_1.default.findOne({
         where: {
-            id: id
+            id_componente: id
         }
     });
     if (!componenteMedidorRevoluciones) {

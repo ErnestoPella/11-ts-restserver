@@ -24,7 +24,7 @@ const getComponenteTanque = (req, res) => __awaiter(void 0, void 0, void 0, func
     try {
         const componenteTanque = yield componenteTanque_1.default.findOne({
             where: {
-                id: id
+                id_componente: id
             }
         });
         res.json(componenteTanque);
@@ -41,12 +41,12 @@ const postComponenteTanque = (req, res) => __awaiter(void 0, void 0, void 0, fun
     try {
         const existeTanque = yield componenteTanque_1.default.findOne({
             where: {
-                id: body.id
+                id_componente: body.id_componente
             }
         });
         if (existeTanque) {
             return res.status(400).json({
-                msg: `Ya existe un tanque con el id ${body.id}`
+                msg: `Ya existe un tanque con el id ${body.id_componente}`
             });
         }
         const componenteTanque = new componenteTanque_1.default(body);
@@ -68,7 +68,7 @@ const putComponenteTanque = (req, res) => __awaiter(void 0, void 0, void 0, func
     try {
         const componenteTanque = yield componenteTanque_1.default.findOne({
             where: {
-                id: id
+                id_componente: id
             }
         });
         if (!componenteTanque) {
@@ -92,7 +92,7 @@ const deleteComponenteTaque = (req, res) => __awaiter(void 0, void 0, void 0, fu
     const { id } = req.params;
     const componenteTanque = yield componenteTanque_1.default.findOne({
         where: {
-            id: id
+            id_componente: id
         }
     });
     if (!componenteTanque) {

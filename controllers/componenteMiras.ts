@@ -15,7 +15,7 @@ export const getComponenteMira = async (req:Request,res:Response) => {
     try {
         const componenteMira = await ComponenteMira.findOne({
             where:{
-                id:id
+                id_componente:id
             }
         });
         res.json(componenteMira);
@@ -33,12 +33,12 @@ export const postComponenteMira = async (req:Request,res:Response) => {
     try {
         const existeMira = await ComponenteMira.findOne({
             where:{
-                id:body.id
+                id_componente:body.id_componente
             }
         });
         if(existeMira){
             return res.status(400).json({
-                msg: `Ya existe una mira con el id ${body.id}`
+                msg: `Ya existe una mira con el id ${body.id_componente}`
             });
         }
         const componenteMira = new ComponenteMira(body);
@@ -62,7 +62,7 @@ export const putComponenteMira = async (req:Request, res:Response) => {
     try {
         const componenteMira = await ComponenteMira.findOne({
             where:{
-                id:id
+                id_componente:id
             }
         });
         if(!componenteMira){
@@ -89,7 +89,7 @@ export const deleteComponenteMira = async (req:Request,res:Response) => {
 
     const componenteMira = await ComponenteMira.findOne({
         where:{
-            id:id
+            id_componente:id
         }
     });
     if(!componenteMira){
