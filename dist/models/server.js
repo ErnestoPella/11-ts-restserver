@@ -30,6 +30,8 @@ const componenteMedidorRevoluciones_1 = __importDefault(require("../routes/compo
 const componenteElevador_1 = __importDefault(require("../routes/componenteElevador"));
 const rol_1 = __importDefault(require("../routes/rol"));
 const usuarioRol_1 = __importDefault(require("../routes/usuarioRol"));
+const practicaUsuario_1 = __importDefault(require("../routes/practicaUsuario"));
+const comun_1 = __importDefault(require("../routes/comun"));
 const cors_1 = __importDefault(require("cors"));
 const connection_1 = __importDefault(require("../db/connection"));
 class Server {
@@ -51,7 +53,9 @@ class Server {
             componenteMedidorRevoluciones: '/api/componenteMedidorRevoluciones',
             componenteElevador: '/api/componenteElevador',
             rol: '/api/rol',
-            usuarioRol: '/api/usuarioRol'
+            usuarioRol: '/api/usuarioRol',
+            practicaUsuario: '/api/practicaUsuarios',
+            comun: '/api/comun'
         };
         this.app = (0, express_1.default)();
         this.port = process.env.PORT || '8000';
@@ -97,6 +101,8 @@ class Server {
         this.app.use(this.apiPaths.componenteElevador, componenteElevador_1.default);
         this.app.use(this.apiPaths.rol, rol_1.default);
         this.app.use(this.apiPaths.usuarioRol, usuarioRol_1.default);
+        this.app.use(this.apiPaths.practicaUsuario, practicaUsuario_1.default);
+        this.app.use(this.apiPaths.comun, comun_1.default);
     }
     listen() {
         this.app.listen(this.port, () => {

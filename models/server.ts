@@ -15,7 +15,9 @@ import componenteMiraRouter from '../routes/componenteMira';
 import ComponenteMedidorRevolucionesRouter from '../routes/componenteMedidorRevoluciones';
 import ComponenteElevadorRouter from '../routes/componenteElevador';
 import rolRouter from '../routes/rol';
-import usuarioRol from '../routes/usuarioRol';
+import usuarioRolRouter from '../routes/usuarioRol';
+import practicaUsuarioRouter from '../routes/practicaUsuario'
+import comunRouter from '../routes/comun';
 import cors from 'cors';
 import db from '../db/connection';
 
@@ -40,7 +42,9 @@ class Server {
         componenteMedidorRevoluciones: '/api/componenteMedidorRevoluciones',
         componenteElevador: '/api/componenteElevador',
         rol:'/api/rol',
-        usuarioRol:'/api/usuarioRol'
+        usuarioRol:'/api/usuarioRol',
+        practicaUsuario:'/api/practicaUsuarios',
+        comun: '/api/comun'
     }
     
     
@@ -94,7 +98,9 @@ class Server {
         this.app.use(this.apiPaths.componenteMedidorRevoluciones,ComponenteMedidorRevolucionesRouter)
         this.app.use(this.apiPaths.componenteElevador, ComponenteElevadorRouter)
         this.app.use(this.apiPaths.rol, rolRouter)
-        this.app.use(this.apiPaths.usuarioRol,usuarioRol)
+        this.app.use(this.apiPaths.usuarioRol,usuarioRolRouter)
+        this.app.use(this.apiPaths.practicaUsuario,practicaUsuarioRouter)
+        this.app.use(this.apiPaths.comun,comunRouter)
     }
 
 

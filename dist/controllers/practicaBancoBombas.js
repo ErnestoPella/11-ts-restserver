@@ -22,8 +22,12 @@ exports.getPracticasBancoBomba = getPracticasBancoBomba;
 const getPracticaBancoBomba = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { nombre } = req.params;
     try {
-        const practicaBancoBomba = yield practicaBancoBomba_1.default.findByPk(nombre);
-        res.json(practicaBancoBomba);
+        const existepracticaCanal = yield practicaBancoBomba_1.default.findOne({
+            where: {
+                nombre: nombre
+            }
+        });
+        res.json(existepracticaCanal);
     }
     catch (error) {
         res.status(404).json({

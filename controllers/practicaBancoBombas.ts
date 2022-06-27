@@ -13,8 +13,12 @@ export const getPracticaBancoBomba = async (req:Request, res:Response) => {
     const { nombre } = req.params;
 
     try {
-        const practicaBancoBomba = await PracticaBancoBomba.findByPk( nombre );
-        res.json(practicaBancoBomba);    
+        const existepracticaCanal = await PracticaBancoBomba.findOne({
+            where: {
+                nombre: nombre
+            }
+        });
+        res.json(existepracticaCanal);    
     } catch (error) {
         res.status(404).json({
             msg: `No existe una practica con ese nombre${nombre}`

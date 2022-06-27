@@ -1,0 +1,1 @@
+{"version":3,"file":"comun.js","sourceRoot":"","sources":["../../models/comun.ts"],"names":[],"mappings":";;;;;AAAA,yCAAoC;AACpC,kEAAkC;AAElC,MAAM,KAAK,GAAG,oBAAE,CAAC,MAAM,CAAC,OAAO,EAAC;IAC5B,aAAa,EAAC;QACV,IAAI,EAAE,qBAAS,CAAC,OAAO;QACvB,UAAU,EAAC,IAAI;KAClB;CACJ,EAAC;IACE,UAAU,EAAC,KAAK;CACnB,CAAC,CAAC;AAGH,kBAAe,KAAK,CAAC"}
